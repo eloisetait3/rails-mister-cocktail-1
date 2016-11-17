@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
       <%= simple_form_for [@cocktail, @dose] do |f| %>
-      <%= f.input :ingredient, collection: Ingredient.all %>
+      <%= f.input :ingredient, collection: Ingredient.all, prompt: "Pick one from list" %>
       <%= f.input :description %>
       <%= f.submit "Submit", class: "btn btn-primary" %>
       <% end %>

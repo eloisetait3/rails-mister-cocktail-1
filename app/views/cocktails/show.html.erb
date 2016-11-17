@@ -18,15 +18,18 @@
       <p class="pad10"><%= d.description %></p>
       <% end %>
     </ul>
-    <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary", id: "ingredient-add-button"%>
-    <%= link_to "Go back", cocktails_path, class: "btn btn-warning" %>
+    <div class="pad20">
+      <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary", id: "ingredient-add-button"%>
+      <%= link_to "Go back", cocktails_path, class: "btn btn-warning" %>
+    </div>
+
 
     <!-- Add cocktail form -->
     <div class="pad20" id="ingredient-form">
       <div class="row">
         <div class="col-xs-12 col-md-4">
           <%= simple_form_for [@cocktail, @dose] do |f| %>
-            <%= f.input :ingredient, collection: Ingredient.all %>
+            <%= f.input :ingredient, collection: Ingredient.all,  prompt: "Pick one from list" %>
             <%= f.input :description %>
             <%= f.submit "Submit", class: "btn btn-primary" %>
           <% end %>
