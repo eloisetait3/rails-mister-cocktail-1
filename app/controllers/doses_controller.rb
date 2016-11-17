@@ -17,10 +17,10 @@ class DosesController < ApplicationController
   end
 
   def destroy
-    @cocktail = session[:cocktail_id]
     @dose = Dose.find(params[:id])
+    @cocktail = @dose.cocktail
     @dose.destroy
-    redirect_to cocktail_path(@cocktail["id"])
+    redirect_to cocktail_path(@cocktail)
   end
 
   private

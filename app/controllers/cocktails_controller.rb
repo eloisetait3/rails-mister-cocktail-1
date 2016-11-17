@@ -6,7 +6,6 @@ class CocktailsController < ApplicationController
   end
 
   def show
-    session[:cocktail_id] = @cocktail
   end
 
   def new
