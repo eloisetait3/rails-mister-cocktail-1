@@ -1,6 +1,15 @@
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.input :ingredient, collection: Ingredient.all %>
-  <%= f.submit "Submit" %>
-
-<% end %>
+<div class="container padded">
+  <h3 class="text-center">Add an ingredient</h1>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.input :ingredient, collection: Ingredient.all %>
+      <%= f.input :description %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+      <div class="pad20">
+        <%= link_to "Go back", cocktails_path, class: "btn btn-warning" %>
+      </div>
+    </div>
+  </div>
+</div>
