@@ -32,7 +32,15 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+# Keep secrets
 gem 'figaro'
+
+# Image upload
+gem 'cloudinary', '1.1.0'
+gem 'attachinary'
+
+# Pretty console
+gem 'pry-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

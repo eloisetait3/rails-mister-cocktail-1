@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   end
   delete '/doses/:id', to: 'doses#destroy', as: 'dose'
   root 'cocktails#index'
+  # Attachinary config 
+  mount Attachinary::Engine => "/attachinary"
 end

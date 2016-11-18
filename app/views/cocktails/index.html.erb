@@ -1,7 +1,32 @@
 <div class="container pad20">
-  <h1 class="text-underline text-brand">Delicious cocktails. Listed</h1>
-  <% @cocktails.each do |cocktail| %>
-    <h3> <%= link_to cocktail.name, cocktail_path(cocktail) %> </h2>
-  <% end %>
-  <%= link_to "Add your cocktail", new_cocktail_path, class: "btn btn-primary pad20" %>
+  <!-- Heading -->
+  <h1 class="text-underline text-brand">Delicious cocktails</h1>
+
+    <!-- Grid row -->
+  <div class="row">
+    <!-- Card -->
+    <% @cocktails.each do |cocktail| %>
+    <% if cocktail.photo %>
+      <% bg_path = cl_image_path cocktail.photo.path, height: 500, width: 500, crop: :crop %>
+    <% else %>
+      <% bg_path = cl_image_path "xmnekrv7t2gigbpgsgtk",
+        height: 500, width: 500, crop: :fit %>
+    <% end %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= bg_path %>');">
+        <div class="card-description">
+          <h2> <%= cocktail.name  %> </h2>
+        </div>
+        <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <!-- Add button -->
+  <div class="pad10">
+    <%= link_to "Add your cocktail", new_cocktail_path, class: "btn btn-primary pad20" %>
+  </div>
+
+<!-- Close main div -->
 </div>
