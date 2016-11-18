@@ -6,14 +6,10 @@
   <div class="row">
     <!-- Card -->
     <% @cocktails.each do |cocktail| %>
-    <% if cocktail.photo %>
-      <% bg_path = cl_image_path cocktail.photo.path, height: 500, width: 500, crop: :crop %>
-    <% else %>
-      <% bg_path = cl_image_path "xmnekrv7t2gigbpgsgtk",
-        height: 500, width: 500, crop: :fit %>
-    <% end %>
+
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= bg_path %>');">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+                  url('<%= image_or_stub(cocktail, "xmnekrv7t2gigbpgsgtk") %>');">
         <div class="card-description">
           <h2> <%= cocktail.name  %> </h2>
         </div>
