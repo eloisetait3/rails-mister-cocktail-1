@@ -38,6 +38,7 @@ gem 'figaro'
 # Image upload
 gem 'cloudinary', '1.1.0'
 gem 'attachinary'
+gem 'responders'
 
 # Pretty console
 gem 'pry-rails'
