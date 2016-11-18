@@ -12,7 +12,8 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
-      render :new
+     render :new
+     # render 'cocktails/show' # to have verifications on the same page
     end
   end
 
